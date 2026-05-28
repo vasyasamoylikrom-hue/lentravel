@@ -19,4 +19,9 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('places/<int:pk>/', views.PlaceDetailView.as_view(), name="place_detail"),
+    path('places/add/', views.PlaceCreateView.as_view(), name="place_create"),
+    path('places/<int:pk>/edit/', views.PlaceUpdateView.as_view(), name="place_update"),
+    path('places/<int:pk>/delete/', views.PlaceDeleteView.as_view(), name="place_delete"),
+    path('', views.PlaceListView.as_view(), name= "place_list")
 ]
